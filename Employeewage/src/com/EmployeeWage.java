@@ -10,17 +10,22 @@ public class EmployeeWage {
 
 	public void dailywage(int ran_int) {
 		System.out.println("value " + ran_int);
-
-		if (ran_int == 1) {
+		switch (ran_int) {
+		case 1:
 			System.out.println("Employee is present");
 			wage = empWageperHer + full_time;
 			System.out.println("Employee daily wage is if present: " + wage);
-		} else if (ran_int == 2) {
+			break;
+		case 2:
 			System.out.println("Employee is present part time");
 			wage = empWageperHer + part_time;
 			System.out.println("Employee daily wage is if present: " + wage);
-		} else {
+			break;
+		case 0:
 			System.out.println("Employee is absent");
+			break;
+		default:
+			System.out.println("wrong input");
 
 		}
 
