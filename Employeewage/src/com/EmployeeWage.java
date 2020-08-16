@@ -11,9 +11,11 @@ public class EmployeeWage {
 	int count = 0;
 	int i;
 	int dayzPerMonth = 20;
+	int Total_max_hour = 100;
+	int Totalhour = 0;
 
 	public void dailwage() {
-		for (i = 1; i <= dayzPerMonth; i++) {
+		for (i = 0; i < dayzPerMonth && Totalhour <= Total_max_hour; i++) {
 			Random ran = new Random();
 			int ran_int = ran.nextInt(3);
 			switch (ran_int) {
@@ -29,12 +31,14 @@ public class EmployeeWage {
 			default:
 				System.out.println("wrong input");
 			}
+			Totalhour = Totalhour + hour;
 			Dailywage = empWageperHer * hour;
 			Totalwage = Dailywage + Totalwage;
 			count++;
 		}
-		System.out.println("Total wage for day " + count + " is " + Totalwage);
-
+		System.out.println("Total wage for Month is " + Totalwage);
+		System.out.println("Total hour is " + Totalhour);
+		System.out.println("Total days of working " + i);
 	}
 
 	public static void main(String[] args) {
