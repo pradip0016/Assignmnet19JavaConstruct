@@ -4,39 +4,43 @@ import java.util.Random;
 
 public class EmployeeWage {
 	int empWageperHer = 20;
-	int full_time = 8;
-	int part_time = 4;
+	int hour = 0;
 	int wage = 0;
+	int Dailywage = 0;
+	int Totalwage = 0;
+	int count = 0;
+	int i;
+	int dayzPerMonth = 20;
 
-	public void dailywage(int ran_int) {
-		System.out.println("value " + ran_int);
-		switch (ran_int) {
-		case 1:
-			System.out.println("Employee is present");
-			wage = empWageperHer + full_time;
-			System.out.println("Employee daily wage is if present: " + wage);
-			break;
-		case 2:
-			System.out.println("Employee is present part time");
-			wage = empWageperHer + part_time;
-			System.out.println("Employee daily wage is if present: " + wage);
-			break;
-		case 0:
-			System.out.println("Employee is absent");
-			break;
-		default:
-			System.out.println("wrong input");
-
+	public void dailwage() {
+		for (i = 1; i <= dayzPerMonth; i++) {
+			Random ran = new Random();
+			int ran_int = ran.nextInt(3);
+			switch (ran_int) {
+			case 1:
+				hour = 8;
+				break;
+			case 2:
+				hour = 4;
+				break;
+			case 0:
+				hour = 0;
+				break;
+			default:
+				System.out.println("wrong input");
+			}
+			Dailywage = empWageperHer * hour;
+			Totalwage = Dailywage + Totalwage;
+			count++;
 		}
+		System.out.println("Total wage for day " + count + " is " + Totalwage);
 
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee wage computation program");
 		EmployeeWage e = new EmployeeWage();
-		Random ran = new Random();
-		int ran_int1 = ran.nextInt(3);
-		e.dailywage(ran_int1);
+		e.dailwage();
 
 	}
 
