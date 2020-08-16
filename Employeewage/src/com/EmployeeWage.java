@@ -7,18 +7,19 @@ public class EmployeeWage {
 	int full_time = 8;
 	int part_time = 4;
 	int wage = 0;
-
 	public void dailywage(int ran_int) {
 		System.out.println("value " + ran_int);
+		
+		
 		switch (ran_int) {
 		case 1:
 			System.out.println("Employee is present");
-			wage = empWageperHer + full_time;
+			wage = empWageperHer * full_time;
 			System.out.println("Employee daily wage is if present: " + wage);
 			break;
 		case 2:
 			System.out.println("Employee is present part time");
-			wage = empWageperHer + part_time;
+			wage = empWageperHer * part_time;
 			System.out.println("Employee daily wage is if present: " + wage);
 			break;
 		case 0:
