@@ -12,7 +12,7 @@ public class EmployeeWage {
 		if (ran_int == 1) {
 			System.out.println("Employee is present");
 			System.out.println("Employee is present");
-			wage = empWageperHer + full_time;
+			wage = empWageperHer * full_time;
 			System.out.println("Employee daily wage is if present: " + wage);
 		} else if (ran_int == 2) {
 			System.out.println("Employee is present part time");
